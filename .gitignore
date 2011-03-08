@@ -3,3 +3,4 @@ nbproject
 .bundle
 vendor/bundle
 coverage
+*.swp
