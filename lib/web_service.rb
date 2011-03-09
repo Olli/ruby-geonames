@@ -36,7 +36,7 @@ module Geonames
         element.elements[child][0].to_s.to_i
       end
     end
-    
+
     def WebService.children_search( geoid, *args )
       children = Array.new
 
@@ -45,10 +45,6 @@ module Geonames
       res = make_request(url, args)
       doc = REXML::Document.new res.body
 
-     # doc.elements.each do |element|
-     #   puts element
-     # end
-      #
       doc.elements.each("geonames/geoname") do |element|
         children << WebService::element_to_toponym( element )
       end
