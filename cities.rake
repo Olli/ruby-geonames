@@ -7,9 +7,8 @@ namespace :pippo do
   #end
   task :collect do
     path = "/home/wintermute/code/Italy.txt"
-    puts "dai cazzo!!"
+    #puts "dai cazzo!!"
     File.open(path).each { |line|
-      #line.match(/Regione:/) {|m| puts m}
       m = line.match(/Regione/)
       if m
         nomi = line.split(/\t/)

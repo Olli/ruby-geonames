@@ -25,7 +25,7 @@ def crea_file_stato_online
   regions = Geonames::WebService.children_search( ITALY )
   puts "Elenco delle regioni ottenuto"
   regions.each do |region|
-    f.puts("*******Regione:\t" + region.name + "\tgeonameid:\t" + region.geoname_id)
+    f.puts("*******Regione:\t" + region.name + "\t" + region.geoname_id)
     provinces = Geonames::WebService.children_search( region.geoname_id.to_i )
     provinces.each do |province|
       puts "Sto elaborando " + province.name
@@ -34,7 +34,7 @@ def crea_file_stato_online
       province_infos = infos.first.split(/\t/)
       name = province_infos[1]
       name_abbr = province_infos[11]
-      f.puts("****** Provincia: " + name + "  " + name_abbr)
+      f.puts("******Provincia:\t" + name + "\t" + name_abbr)
       cities = Geonames::WebService.children_search( province.geoname_id.to_i )
       cities.each do |city|
         f.puts( "Nome:\t" + city.name )
