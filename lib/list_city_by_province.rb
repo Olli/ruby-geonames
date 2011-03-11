@@ -1,5 +1,6 @@
 require 'geonames'
 require 'pp'
+EUROPE = 6255148
 ITALY = 3175395
 ENGLAND = 2635167
 FRANCE = 3017382
