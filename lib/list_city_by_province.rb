@@ -5,7 +5,9 @@ ITALY = 3175395
 ENGLAND = 2635167
 FRANCE = 3017382
 GERMANY = 2921044
-PATH = "/home/wintermute/code/nation-project/"
+# I assume that the ruby-geonames folder and the one with the txt data are at the same level, and its name is 'nation-project'
+# Edit the path if things are different.
+PATH = "../../nation-project/"
 #STATE_FILE = PATH + "IT.txt"
 #STATE_FILE = PATH + "FR.txt"
 #OUTPUT_FILE = PATH + "Britain.txt"
@@ -56,7 +58,7 @@ end
 
 crea_albero_posti_online
 
-#def crea_file_example
+#def test_crea_file
 #  f = File.open( OUTPUT_FILE ,"w+")
 #  puts "Output file aperto"
 #  regions = Geonames::WebService.children_search( ITALY )
