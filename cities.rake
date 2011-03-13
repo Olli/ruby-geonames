@@ -1,8 +1,9 @@
-namespace :pippo do
-  # invoca con rake pippo:collect
+namespace :nations do
+  # invoca con rake nations:collect
+
   country_name = "Italy"
   task :collect => :environment do
-    path = "/home/wintermute/code/Italy.txt"
+    path = "~/nations-project/Italy.txt" #TODO: gestione path file di testo
     country = Country.find_by_name( country_name )
     puts "country id:\t" + country.id.to_s if country
 
@@ -41,7 +42,7 @@ namespace :pippo do
       r.name = nome_regione
       r.country_id = country_id
       #r.save!
-      puts "Region would be created:\t" + nome_regione
+      puts "Region created:\t" + nome_regione
     end
     return r.id
   end
@@ -53,10 +54,10 @@ namespace :pippo do
     else
       p = Province.new
       p.name = nome
-      p.name_abbr = abbr
+      #p.name_abbr = abbr # TODO: l'abbreviazione delle provincie non esiste per tutti gli stati. 
       p.stateregion_id = region_id if region_id
       #p.save!
-      puts "Province would be created:\t" + nome
+      puts "Province created:\t" + nome
     end
 
     return p.id
@@ -70,7 +71,7 @@ namespace :pippo do
       c = City.new
       c.name = citta
       c.province_id = province_id if province_id
-      puts "City would be created:\t" + citta + "\t" + c.id.to_s
+      puts "City created:\t" + citta + "\t" + c.id.to_s
       #c.save!
     end
 
@@ -78,10 +79,4 @@ namespace :pippo do
   end
 
 
-  #File.open(DOCNAME).each { |line|
-  #  splitted_line = line.split(/\t/)
-  #  if splitted_line[C_tab::COUNTRY_CODE] == "IT"
-  #    outfile.puts(splitted_line[C_tab::NAME])
-  #  end
-  #}
 end
