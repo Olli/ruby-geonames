@@ -21,7 +21,7 @@ module Geonames
 
     @@default_username  = nil
     @@default_base_url  = "http://ws.geonames.org"
-    @@default_lang      = "en"
+    @@default_lang      = "it"
 
     def username
       @username || @@default_username

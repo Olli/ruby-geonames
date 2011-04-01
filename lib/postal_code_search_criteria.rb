@@ -49,15 +49,15 @@ module Geonames
             end
             
             if !@latitude.nil?
-                url = url + "&lat" + CGI::escape( @latitude.to_s )
+                url = url + "&lat=" + CGI::escape( @latitude.to_s )
             end
             
             if !@longitude.nil?
-                url = url + "&lng" + CGI::escape( @longitude.to_s )
+                url = url + "&lng=" + CGI::escape( @longitude.to_s )
             end
 
             if !@style.nil?
-                url = url + "&style" + CGI::escape( @style )
+                url = url + "&style=" + CGI::escape( @style )
             end
             
             if !@country_code.nil? 
@@ -65,7 +65,7 @@ module Geonames
             end
             
             if !@max_rows.nil? 
-              url = url + "&maxRows=" + CGI::escape( @max_rows )
+              url = url + "&maxRows=" + CGI::escape( @max_rows.to_s )
             end
 
             if !@radius.nil? 
